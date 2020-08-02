@@ -68,7 +68,7 @@ def gameMain():
 			print("The word is '{}' ".format(wordActual))
 			break
 
-		#start of comment:FIRST checks for word if already guessed or not, then checks for index wordActuallist with userinput, if they're same it replaces that index for wordhidden with blank ' _ ' for word userinput 
+		#checks for word if already guessed or not, then checks for index wordActuallist with userinput, if they're the same it replaces that index for wordhidden with blank ' _ ' for word userinput 
 		if userI in wordHidden:
 			print('already guessed, try something new.')
 		elif userI in wordActuallist:
@@ -78,7 +78,7 @@ def gameMain():
 					wordHidden[i] = userI
 		
 
-		#if character not present in sceret word, reduce number of guesses by -1 for every user input, and print messages regarding it 
+		#if character not present in secret word, reduce number of guesses by -1 for every user input, and print messages regarding it 
 		if userI not in wordActual:
 			print("Sorry there is no '{}'".format(userI))
 			#checks for double inputs prompts user to input again
@@ -88,7 +88,7 @@ def gameMain():
 				num_guesses = num_guesses - 1
 				charGuessedsofar += userI + ' '
 		
-		#if all '_' (character) are replaced  then the word is guessed correctly and hence rthe word is revealed.
+		#if all '_' (character) are replaced then the word is guessed correctly and hence the word is revealed.
 		if ' _ ' not in wordHidden:
 			wordHidden = ''.join(wordHidden)
 			print('Congratulations!\nyou guessed the correct word: {}'.format(wordHidden))
